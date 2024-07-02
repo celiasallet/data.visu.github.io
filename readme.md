@@ -1,3 +1,16 @@
+#Step 1 => 
+fonction qui va recuperer les datas des tableaux pour les affiches dans la console 
+
+
+
+
+
+
+
+
+
+
+
 # Javascript Challenge : "Data Visualisation"
 
 - repository : `js-datavisualisation-challenge`
