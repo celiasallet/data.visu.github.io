@@ -82,8 +82,6 @@ const myChart = new Chart(ctx, {
 
 
 
-
-// Extraire les données de la table HTML
 const table2 = document.querySelector('#table2');
 const rows2 = table2.querySelectorAll('tbody tr');
 const countries = [];
@@ -101,10 +99,6 @@ rows2.forEach(row => {
   values2010_12.push(value2010_12);
 });
 
-// Configuration des couleurs pour le graphique
-
-
-// Configuration du graphique en anneau
 const ctxx = document.getElementById('myChart2').getContext('2d');
 const myChart2 = new Chart(ctxx, {
   type: 'doughnut',
