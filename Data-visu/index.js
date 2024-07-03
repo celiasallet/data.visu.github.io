@@ -78,3 +78,62 @@ const myChart = new Chart(ctx, {
     }
   }
 });
+
+
+
+
+
+// Extraire les données de la table HTML
+const table2 = document.querySelector('#table2');
+const rows2 = table2.querySelectorAll('tbody tr');
+const countries = [];
+const values2007_09 = [];
+const values2010_12 = [];
+
+rows2.forEach(row => {
+  const cells = row.querySelectorAll('td');
+  const country = cells[0].textContent;
+  const value2007_09 = parseFloat(cells[1].textContent);
+  const value2010_12 = parseFloat(cells[2].textContent);
+
+  countries.push(country);
+  values2007_09.push(value2007_09);
+  values2010_12.push(value2010_12);
+});
+
+// Configuration des couleurs pour le graphique
+
+
+// Configuration du graphique en anneau
+const ctxx = document.getElementById('myChart2').getContext('2d');
+const myChart2 = new Chart(ctxx, {
+  type: 'doughnut',
+  data: {
+    labels: countries,
+    datasets: [{
+      label: '2007–09',
+      data: values2007_09,
+      backgroundColor: colors
+    }, {
+      label: '2010–12',
+      data: values2010_12,
+      borderColor: colors
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+          usePointStyle: true
+        }
+      },
+      tooltip: {
+        mode: 'index',
+        intersect: false
+      }
+    }
+  }
+});
+
